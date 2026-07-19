@@ -1,0 +1,14 @@
+[theme]
+# El azul eléctrico del botón "Seguir" de Instagram para los botones de tu app
+primaryColor = "#4D5CFF" 
+
+# El azul marino súper oscuro del post "5 Beneficios" para el fondo general
+backgroundColor = "#041530" 
+
+# Un azul marino intermedio para los recuadros donde el estudiante escribe
+secondaryBackgroundColor = "#0F2852" 
+
+# Texto en blanco para que resalte perfectamente contra los azules oscuros
+textColor = "#FFFFFF" 
+
+font = "sans serif"
