@@ -76,11 +76,9 @@ def normalizar_respuesta(texto):
     texto_limpio = texto_limpio.replace("’", "'").replace("´", "'")
     # 4. Quitar problema de espaciados: Elimina dobles espacios internos y espacios al inicio/final
     texto_limpio = " ".join(texto_limpio.split())
-    # 5. Problemas de mayusculas: Esta línea agarra todo el texto y lo convierte a minúsculas obligatoriamente
-    texto_limpio = texto.lower() 
+    # 5. Problemas de mayúsculas: Esta línea agarra el texto ya procesado y asegura las minúsculas
+    texto_limpio = texto_limpio.lower() 
     
-    
-    return texto_limpio
     return texto_limpio
 
 # INTERFAZ DE USUARIO 
