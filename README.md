@@ -20,8 +20,8 @@ ofreciendo un entorno centrado en la precisión sintáctica.
 Tienes dos formas de utilizar o evaluar la aplicación:
 
 ### Opción A: Acceso Directo (Web Desplegada)
-Puedes acceder directamente a la aplicación en línea de forma pública y sin instalaciones previas a través del siguiente enlace de Streamlit Cloud:
-*(Inserta aquí tu enlace de Streamlit, por ejemplo: https://sedaniapp-sara-alba.streamlit.app)*
+Puedes acceder directamente a la aplicación en línea de forma pública y sin instalaciones previas a través del siguiente enlace de Streamlit Cloud: https://sedaniapp-sistema-experto.streamlit.app/
+
 
 ### Opción B: Ejecución Local
 Si prefieres clonar y configurar el proyecto en tu entorno de desarrollo local:
