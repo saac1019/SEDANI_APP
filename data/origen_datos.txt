@@ -1,0 +1,26 @@
+Origen del Dataset y Base de Conocimiento - SEDANI_APP
+
+La base de conocimiento utilizada en SEDANI_APP consiste en un 
+banco de frases construido a partir de una misma oración base, 
+la cual es adaptada sistemáticamente a través de distintos 
+tiempos y estructuras gramaticales. 
+
+Este conjunto de datos fue redactado y estructurado de forma 
+enteramente manual. El diseño responde a una metodología 
+pedagógica basada en la experiencia directa en la enseñanza 
+del idioma inglés, implementando exactamente las estructuras 
+gramaticales de mayor relevancia y uso en la dinámica real 
+de las clases. 
+
+El criterio para mantener la misma frase con un complemento 
+oracional simple radica en enfocar la atención del sistema 
+y del usuario de manera exclusiva en la mecánica gramatical, 
+evitando que el vocabulario complejo o la variación de 
+complementos interfieran con el objetivo principal de 
+la evaluación.
+
+Finalmente, en estricto cumplimiento con los lineamientos éticos 
+y de privacidad del proyecto, se declara formalmente que 
+SEDANI_APP no recopila, almacena ni utiliza ningún tipo 
+de dato personal, sensible o identificable de los usuarios 
+que interactúan con el sistema.
