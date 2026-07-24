@@ -31,6 +31,10 @@ def evaluar_gramatica(frase_usuario, patrones_esperados):
     if not frase_usuario or not frase_usuario.strip():
         return {"estado": "Error", "detalle": "Entrada vacía detectada"}
         
+    # Manejo de solo números o caracteres especiales
+    if not any(c.isalpha() for c in frase_usuario):
+        return {"estado": "Error", "detalle": "Entrada inválida (solo números o símbolos)"}
+        
     usuario_limpio = normalizar_respuesta(frase_usuario)
     
     # Evalúa si la entrada limpia coincide con alguna de las opciones válidas
@@ -67,7 +71,8 @@ def ejecutar_suite_pruebas():
         {"input": "I SHOULD EAT PIZZA", "patrones": base_conocimiento["modales_simples"], "sistema_debe_arrojar": "Éxito", "tipo": "Borde - Uso de Mayúsculas"},
         
         # Prueba de Caso Borde Crítico
-        {"input": "", "patrones": base_conocimiento["causative_verbs"], "sistema_debe_arrojar": "Error", "tipo": "Borde Crítico - Entrada Vacía"}
+        {"input": "", "patrones": base_conocimiento["causative_verbs"], "sistema_debe_arrojar": "Error", "tipo": "Borde Crítico - Entrada Vacía"},
+        {"input": "12345 @#%", "patrones": base_conocimiento["presente_continuo"], "sistema_debe_arrojar": "Error", "tipo": "Borde Crítico - Solo números y símbolos"}
     ]
 
     total_pruebas = len(casos_prueba)

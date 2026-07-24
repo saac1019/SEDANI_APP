@@ -40,9 +40,6 @@ KNOWLEDGE_BASE = {
 }
 
 # INICIALIZACIÓN DE VARIABLES (Memoria de la app)
-# Usamos 'session_state' porque Streamlit vuelve a ejecutar todo el código desde cero con cada interacción.
-# Si usamos variables normales, el progreso del examen se borraría al cambiar de pregunta.
-# Estos 'if' aseguran que las variables se creen solo una vez al abrir la página.
 if 'fase' not in st.session_state:
     st.session_state.fase = 'inicio'
 if 'nivel_idx' not in st.session_state:
@@ -86,6 +83,9 @@ st.title("Sistema Experto de Diagnóstico Adaptativo del Idioma Inglés 🇺🇸
 st.write("SEDANI")
 st.divider()
 
+# NUEVO: Nota de Transparencia Ética
+st.info("💡 **Nota del Sistema:** Esta evaluación está enfocada estrictamente en tu dominio de la **gramática**. Si cometes un error ortográfico menor en la palabra de complemento (por ejemplo, escribir 'piza' o 'pisa' en lugar de 'pizza'), el algoritmo lo pasará por alto para no penalizarte injustamente y se enfocará en evaluar la estructura correcta de tus tiempos verbales.")
+
 # FASE 1: INICIO (Recopilación de Perfil Conceptual) 
 if st.session_state.fase == 'inicio':
     st.subheader("Recopilación de Perfil Conceptual")
@@ -122,7 +122,12 @@ elif st.session_state.fase == 'prueba':
         enviado = st.form_submit_button("Enviar traducción")
         
         if enviado:
-            if respuesta_usuario:
+            # Validaciones Críticas (respuestas vacías, números o caraácteres especiales)
+            if not respuesta_usuario.strip():
+                st.warning("Escribe una respuesta antes de enviar.")
+            elif not any(c.isalpha() for c in respuesta_usuario):
+                st.error("Error: Ingrese una oración válida. No se permiten solo números ni caracteres especiales.")
+            else:
                 respuesta_limpia = normalizar_respuesta(respuesta_usuario)
                 
                 if respuesta_limpia in reactivo['respuestas_esperadas']:
@@ -156,8 +161,6 @@ elif st.session_state.fase == 'prueba':
                     st.session_state.fase = 'resultado'
                 
                 st.rerun()
-            else:
-                st.warning("Escribe una respuesta antes de enviar.")
 
 # FASE 3: RESULTADO E INFORME DIAGNÓSTICO 
 elif st.session_state.fase == 'resultado':
