@@ -66,9 +66,9 @@ def ejecutar_suite_pruebas():
         
         # Pruebas de Casos Borde (El algoritmo debe normalizarlos y dar Éxito)
         {"input": "I'm eating piza.", "patrones": base_conocimiento["presente_continuo"], "sistema_debe_arrojar": "Éxito", "tipo": "Borde - Punto final y error en 'pizza'"},
-        {"input": "I´m not supposed to eat pisa", "patrones": base_conocimiento["be_supposed_to"], "sistema_debe_arrojar": "Éxito", "tipo": "Borde - Apóstrofe raro y error en 'pizza'"},
-        {"input": "   I   used to   eat  pizza   ", "patrones": base_conocimiento["used_to"], "sistema_debe_arrojar": "Éxito", "tipo": "Borde - Dobles espacios"},
         {"input": "I SHOULD EAT PIZZA", "patrones": base_conocimiento["modales_simples"], "sistema_debe_arrojar": "Éxito", "tipo": "Borde - Uso de Mayúsculas"},
+        {"input": "   I   used to   eat  pizza   ", "patrones": base_conocimiento["used_to"], "sistema_debe_arrojar": "Éxito", "tipo": "Borde - Dobles espacios"},
+        {"input": "I´m not supposed to eat pisa", "patrones": base_conocimiento["be_supposed_to"], "sistema_debe_arrojar": "Éxito", "tipo": "Borde - Apóstrofe raro y error en 'pizza'"},
         
         # Prueba de Caso Borde Crítico
         {"input": "", "patrones": base_conocimiento["causative_verbs"], "sistema_debe_arrojar": "Error", "tipo": "Borde Crítico - Entrada Vacía"},
